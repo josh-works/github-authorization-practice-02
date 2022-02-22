@@ -1,5 +1,7 @@
 
 
+
+
 ## 2022-02-22
 
 Rebuilding https://github.com/josh-works/github_authorization_practice, because it's not working exactly right.
@@ -290,3 +292,18 @@ Reloaded the homepage, and it looks great!
 Now lets start walking the content into something better... and voilà:
 
 ![we have a table](/images/tables.jpg)
+
+### Add basic User relationship
+
+### update views a bit
+
+### Add navbar
+
+### start adding devise again...
+
+Following []()
+
+Working on setting up another GH app:
+
+https://github.com/settings/apps
+
