@@ -11,16 +11,34 @@ cordinate_list = %w[
   39.76657266078731,-105.2268147468567
 ]
 
+User.destroy_all
+Pin.destroy_all
+
+user_1 = User.create(
+  name: "josh",
+  email: "foo@bar.com",
+  password: "password",
+  encrypted_password: "password"
+)
+user_2 = User.create(
+  name: "jane jacobs",
+  email: "jane@jacobs.com",
+  password: "password",
+  encrypted_password: "password"
+)
+
 Pin.find_or_create_by(
   description: "a dangerous intersection (at times) for everyone who uses it.",
   latitude: 39.7664442,
-  longitude: -105.228456
+  longitude: -105.228456,
+  user: user_1
 )
 
 Pin.find_or_create_by(
   description: "This is a dangerous street for cyclists; drivers get annoyed with cyclists, and vice versa.",
   latitude: 39.766444,
-  longitude: -105.228456
+  longitude: -105.228456,
+  user: user_1
 )
 puts "making pins"
 10.times do |n|
@@ -28,7 +46,8 @@ puts "making pins"
   Pin.create(
     description: Faker::Marketing.buzzwords,
     latitude: coords[0],
-    longitude: coords[1]
+    longitude: coords[1],
+    user: User.all.sample
   )
 end
 
